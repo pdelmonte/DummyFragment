@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">DummyFragment</string>
-
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_swap_fragment_text">Swap</string>
+    <string name="btn_update_fragment_2_text">Update Fragment 2</string>
+    <string name="frag_2_text_content">[Nothing to be showed]</string>
 </resources>

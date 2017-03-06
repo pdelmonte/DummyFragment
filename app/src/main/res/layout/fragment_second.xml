@@ -5,11 +5,26 @@
     tools:context="org.bts.android.dummyfragment.SecondFragment"
     android:background="@color/colorYellow">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-         />
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/hello_blank_fragment"/>
+
+        <TextView
+            android:id="@+id/tv_info_second_fragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/frag_2_text_content"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"/>
+
+    </RelativeLayout>
+
 
 </FrameLayout>
