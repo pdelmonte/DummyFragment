@@ -56,7 +56,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
     @Override
     public void onClick(View whichView) {
 
-        Log.i(FirstFragment.TAG, "Button Clicked!");
+        Log.i(FirstFragment.TAG, "Button Clicked");
 
         if (mInterfaceInstance != null) {
             mInterfaceInstance.getRandomNumberFromFragment1();
