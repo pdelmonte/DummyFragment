@@ -103,6 +103,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Log.i(MainActivity.TAG, "Random Number Generated: " + randomNumber);
 
-        //Fragment fragment = findViewById(R.id.fragment_main_activity);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        SecondFragment secondFragment = (SecondFragment) fragmentManager.findFragmentById(R.id.fragment_main_activity);
+
+        secondFragment.updateTextView(randomNumber);
     }
 }
