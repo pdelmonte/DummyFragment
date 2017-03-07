@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FrameLayout mFragmentContainer;
     private View mMainLayout;
     private boolean mTwoPane;
+    private double mRandomNumber;
 
 
     @Override
@@ -78,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             int color;
 
             if(isFirstFragment) {
-                fragment = new SecondFragment();
+                fragment = new SecondFragment(this.mRandomNumber);
                 fragmentTag = "Second Fragment Landscape";
                 color = R.color.colorYellow;
 
@@ -99,13 +100,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void getRandomNumberFromFragment1() {
 
-        double randomNumber = Math.random();
+        this.mRandomNumber = Math.random();
 
-        Log.i(MainActivity.TAG, "Random Number Generated: " + randomNumber);
+        Log.i(MainActivity.TAG, "Random Number Generated: " + mRandomNumber);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        SecondFragment secondFragment = (SecondFragment) fragmentManager.findFragmentById(R.id.fragment_main_activity);
+        if (this.mTwoPane) {
 
-        secondFragment.updateTextView(randomNumber);
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            SecondFragment secondFragment = (SecondFragment) fragmentManager.findFragmentById(R.id.fragment_main_activity);
+
+            secondFragment.updateTextView(mRandomNumber);
+        }
     }
 }

@@ -18,9 +18,15 @@ public class SecondFragment extends Fragment {
 
     private static final String TAG = SecondFragment.class.getSimpleName();
     private TextView mTxtViewInfo;
+    private double mExternalRandomNumber;
 
     public SecondFragment() {
         // Required empty public constructor
+    }
+
+    public SecondFragment(double mRandomNumber) {
+        this.mExternalRandomNumber = mRandomNumber;
+
     }
 
 
@@ -33,13 +39,17 @@ public class SecondFragment extends Fragment {
 
         this.mTxtViewInfo = (TextView) rootView.findViewById(R.id.tv_info_second_fragment);
 
+        if(this.mExternalRandomNumber != 0.0d) {
+            this.updateTextView(this.mExternalRandomNumber);
+        }
+
         return rootView;
 
     }
 
-    public void updateTextView(double randomNumber) {
+    public void updateTextView(double mRandomNumber) {
 
-        this.mTxtViewInfo.setText(String.valueOf(randomNumber));
+        this.mTxtViewInfo.setText(String.valueOf(mRandomNumber));
         Log.i(SecondFragment.TAG, "TextView updated!");
     }
 }
